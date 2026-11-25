@@ -1,33 +1,21 @@
 import CommentItem from "./CommentItem.tsx";
 
-const text = "2016 yilda Nyu-Yorkda Karjakin va Karlsen shaxmat toji uchun o'yinda uchrashishdi. Keyin Norvegiya chempioni tay-brekda g'alaba qozondi va chempionlik unvonini saqlab qoldi.\n26 noyabr kuni Karlsen va Karuana 12-o'yinni o'tkazishadi. Oq qismlarni amerikalik boshqaradi.";
-
-const comments = [
-    {id: 1, name: "Jasurbek Narzullayev", avatar: "/odam.jpg", date: "7 Sentyabr 2022 y. 19:52", rating: 4},
-    {id: 2, name: "Muhammadamin Domlahonov", avatar: "/odam.jpg", date: "7 Sentyabr 2022 y. 19:52", rating: 3},
-    {id: 3, name: "Shoxruh Baxtiyarov", avatar: "/odam.jpg", date: "7 Sentyabr 2022 y. 19:52", rating: 5},
-    {id: 4, name: "Jasurbek Narzullayev", avatar: "/odam.jpg", date: "7 Sentyabr 2022 y. 19:52", rating: 4},
-];
-
 export default function Comments() {
-    return <div className="flex flex-col gap-4">
-        <h2 className="text-[#F7F9FA] text-[22px] font-bold">Kurs haqida izohlar</h2>
+  let text = "2016 yilda Nyu-Yorkda Karjakin va Karlsen shaxmat toji uchun o'yinda uchrashishdi. Keyin Norvegiya chempioni tay-brekda g'alaba qozondi va chempionlik unvonini saqlab qoldi. 26 noyabr kuni Karlsen va Karuana 12-o'yinni o'tkazishadi. Oq qismlarni amerikalik boshqaradi.";
 
-        <div className="w-full bg-[#1A1D1F] rounded-lg border border-[#F7F9FA]/8 px-5">
-            {comments.map((comment) => (
-                <CommentItem
-                    key={comment.id}
-                    name={comment.name}
-                    avatar={comment.avatar}
-                    date={comment.date}
-                    rating={comment.rating}
-                    text={text}
-                />
-            ))}
-        </div>
+  return <div className="flex flex-col items-center gap-4">
+    <h2 className="w-full text-[#F7F9FA] text-[22px] font-bold">Kurs haqida izohlar</h2>
 
-        <button className="self-center h-10 px-8 rounded-lg bg-[#2A2D30] hover:bg-[#33373A] text-[#F7F9FA] text-[14px] font-medium cursor-pointer">
-            Barcha izohlar
-        </button>
+    <div className="w-full bg-[#1A1D1F] rounded-lg border border-[#F7F9FA]/8 px-5">
+      <CommentItem name="Jasurbek Narzullayev" avatar="/odam.jpg" date="7 Sentyabr 2022 y. 19:52" rating={4} text={text}/>
+      <div className="w-full h-px bg-[#F7F9FA]/8"></div>
+      <CommentItem name="Muhammadamin Domlahonov" avatar="/odam.jpg" date="7 Sentyabr 2022 y. 19:52" rating={3} text={text}/>
+      <div className="w-full h-px bg-[#F7F9FA]/8"></div>
+      <CommentItem name="Shoxruh Baxtiyarov" avatar="/odam.jpg" date="7 Sentyabr 2022 y. 19:52" rating={5} text={text}/>
+      <div className="w-full h-px bg-[#F7F9FA]/8"></div>
+      <CommentItem name="Jasurbek Narzullayev" avatar="/odam.jpg" date="7 Sentyabr 2022 y. 19:52" rating={4} text={text}/>
     </div>
+
+    <button className="h-10 px-8 rounded-lg bg-[#2A2D30] hover:bg-[#33373A] text-[#F7F9FA] text-[14px] font-medium">Barcha izohlar</button>
+  </div>;
 }
